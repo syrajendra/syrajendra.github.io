@@ -33,7 +33,7 @@ function list_dropbox_contents(folder, client, parent) {
 	  						g_dropbox_count++;
 							var target_id = get_collapse_unique_target_id(g_cloud_name, f_name, g_dropbox_count);
 							create_icon(f_name, target_id, parent);
-							create_radio_button(f_name, 'radio_btn', 'margin-left:0.0cm;', parent);
+							create_radio_button(f_name, 'radio_btn', 'margin-left:0.1cm;', parent);
 							create_div(target_id, "collapse", "", 'margin-left:1cm;', parent);
 							var parent_id = document.getElementById(target_id);
 	  						list_dropbox_contents(stat.path, client, parent_id);

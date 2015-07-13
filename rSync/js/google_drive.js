@@ -27,7 +27,6 @@ function handle_quota_result(resp) {
  	var folder_div = document.getElementById('folder_' + g_cloud_name);
  	//console.log(folder_div);
  	list_google_drive_contents('root', folder_div);
- 	//toggle_init();
 }
 
 function handle_google_drive_auth_result(resp) {
