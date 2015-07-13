@@ -95,7 +95,7 @@ function create_radio_button(label, name, radio_style, parent) {
 	elem.setAttribute('name', name);
 	elem.setAttribute('style', radio_style);
 	var lab = document.createElement('label');
-	lab.setAttribute('class', 'radio inline')
+	lab.setAttribute('class', 'radio-inline')
 	var text = document.createTextNode(label);
 	lab.appendChild(text);
 	parent.appendChild(elem);
