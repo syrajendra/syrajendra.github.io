@@ -57,7 +57,7 @@ function create_navigation_list(cloud_name, username, parent) {
 	g_cloud_count++;
 	create_div('nav_' + cloud_name, 'col col-sm-5', '', '', parent);
 	var nav_parent = document.getElementById('nav_' + cloud_name);
-	create_unordered_list('ul_' + cloud_name, 'nav nav-list', nav_parent);
+	create_unordered_list('ul_' + cloud_name, 'nav nav-pills nav-stacked', nav_parent);
 	var ul_parent = document.getElementById('ul_' + cloud_name);
 	var header = cloud_name;
 	if(username) header = header + " ("+ username + ")";

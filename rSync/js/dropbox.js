@@ -26,8 +26,8 @@ function list_dropbox_contents(folder, client, parent) {
 	  				if(stat) {
 	  					var f_name = stat.path.substring(stat.path.lastIndexOf("/")+1, stat.path.length);
 	  					if(stat.isFolder) {
-	  						console.log("Folder : " + stat.path);
-	  						console.log(stat);
+	  						//console.log("Folder : " + stat.path);
+	  						//console.log(stat);
 	  						if('/Apps' == stat.path) return;
 	  						if('/Public' == stat.path) return;
 	  						g_dropbox_count++;
@@ -38,7 +38,7 @@ function list_dropbox_contents(folder, client, parent) {
 							var parent_id = document.getElementById(target_id);
 	  						list_dropbox_contents(stat.path, client, parent_id);
 	  					} else {
-	  						console.log("File : " + stat.path);
+	  						//console.log("File : " + stat.path);
 	  						create_radio_button(f_name, 'radio_btn', 'margin-left:0.5cm;', parent);
 	  					}
 	  				}
