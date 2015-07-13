@@ -4,11 +4,11 @@ var g_cloud_name = '';
 var gdrive_count = 0;
 var g_parent = '';
 
-function toggle_init () {
-	$(".glyphicon-minus, .glyphicon-plus").on('click', function(event) {
-	    $(this).toggleClass("glyphicon-minus glyphicon-plus");
-	});
-}
+//function toggle_init () {
+//	$(".glyphicon-minus, .glyphicon-plus").on('click', function(event) {
+//	    $(this).toggleClass("glyphicon-minus glyphicon-plus");
+//	});
+//}
 
 /* Function  for testing purpose */
 //function list_contents() {
@@ -27,7 +27,7 @@ function handle_quota_result(resp) {
  	var folder_div = document.getElementById('folder_' + g_cloud_name);
  	//console.log(folder_div);
  	list_google_drive_contents('root', folder_div);
- 	toggle_init();
+ 	//toggle_init();
 }
 
 function handle_google_drive_auth_result(resp) {
