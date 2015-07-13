@@ -5,8 +5,8 @@ var gdrive_count = 0;
 var g_parent = '';
 
 function toggle_init () {
-	$(".icon-minus, .icon-plus").on('click', function(event) {
-	    $(this).toggleClass("icon-minus icon-plus");
+	$(".glyphicon-minus, .glyphicon-plus").on('click', function(event) {
+	    $(this).toggleClass("glyphicon-minus glyphicon-plus");
 	});
 }
 
