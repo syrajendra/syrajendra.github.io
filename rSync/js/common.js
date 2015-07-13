@@ -127,7 +127,7 @@ function create_div(id, classname, text, style, parent) {
 
 function create_icon(id, target, parent) {
 	var html_icon = '<i style="margin-top:0.1cm;" class="glyphicon-plus" data-toggle="collapse" data-target="#' + target  + '" id="img_' + id + '"></i>';
-	parent.insertAdjacentHTML('afterend', html_icon);
+	parent.insertAdjacentHTML('beforeend', html_icon);
 }
 
 function create_text(text, parent) {
