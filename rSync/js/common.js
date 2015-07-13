@@ -8,7 +8,7 @@ $(function() {
 });
 
 $('[data-toggle="collapse"]').click(function(e) {
-    $(e.target).find('.icon-minus-sign, .icon-plus-sign').toggleClass("icon-minus-sign icon-plus-sign");
+    $(e.target).find('.glyphicon-minus, .glyphicon-plus').toggleClass("glyphicon-minus glyphicon-plus");
 });
 
 var g_cloud_count = 0;
@@ -126,7 +126,7 @@ function create_div(id, classname, text, style, parent) {
 }
 
 function create_icon(id, target, parent) {
-	var html_icon = '<i style="margin-top:0.1cm;" class="icon-plus-sign" data-toggle="collapse" data-target="#' + target  + '" id="img_' + id + '"></i>';
+	var html_icon = '<i style="margin-top:0.1cm;" class="glyphicon-plus" data-toggle="collapse" data-target="#' + target  + '" id="img_' + id + '"></i>';
 	parent.insertAdjacentHTML('beforeend', html_icon);
 }
 
