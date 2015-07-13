@@ -2,19 +2,20 @@
 <html lang="en" ng-app='rSyncApp'>
 	<head>
 		<title>rSync</title>
-	  	<meta   http-equiv="X-UA-Compatible" content="IE=9">
-	  	<meta   name="author" content="syrajendra">		
-	  	<meta   name="description" content="Cloud storage synchronizer">
-		<meta   name="keywords" content="rSync" />
-		<meta   name="viewport" content="width=device-width, initial-scale=1.0">
-		<!--
-		<link   rel="stylesheet" type="text/css" href="https://yui.yahooapis.com/3.11.0/build/cssreset/cssreset-min.css">
+	  	<meta http-equiv="X-UA-Compatible" content="IE=9">
+	  	<meta name="author" content="syrajendra">
+	  	<meta name="description" content="Cloud storage synchronizer">
+		<meta name="keywords" content="rSync" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- https not available
+		<link rel="stylesheet" type="text/css" href="https://yui.yahooapis.com/3.11.0/build/cssreset/cssreset-min.css">
 		-->
-		<link   rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="/rSync/css/cssreset-min.css">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
 	  	<!--
-	  	<link   rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">				
-	  	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>	  	
+	  	<link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
+	  	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	  	<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
 	  	-->
 
@@ -27,31 +28,43 @@
 	  	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.min.js"></script>
 	  	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.4/webfontloader.js"></script>
 	  	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 	  	<script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
 	  	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dropbox.js/0.10.3/dropbox.min.js"></script>
 	  	<script type="text/javascript" src="/rSync/js/common.js"></script>
-	  	<script type="text/javascript" src="/rSync/js/google_drive.js"></script>	  	
+	  	<script type="text/javascript" src="/rSync/js/google_drive.js"></script>
 	  	<script type="text/javascript" src="/rSync/js/dropbox.js"></script>
+	  	<style>
+	  		ul {
+    			width: 200px;
+    			margin: 20px;
+			}
+			.nav > li.nav-header > a {
+			    cursor: default;
+			    font-size: 14px;
+			    font-weight: bold;
+			    text-transform: uppercase;
+			}
+	  	</style>
 	</head>
-	<body ng-controller='rSyncController'>	
+	<body ng-controller='rSyncController'>
 		<div class="container-fluid">
   			<div class="row-fluid">
   				<div class="span12">
   					<div class="navbar navbar-inverse">
-  						 <div class="navbar-inner">
-  						 	<a class="brand" href="#">rSync</a>
-							    <ul class="nav">
+  						 <div class="navbar-header">
+  						 	<a class="navbar-brand" href="#">rSync</a>
+							    <ul class="nav navbar-nav">
 							    	<li class="active"><a href="#">Home</a></li>
 							      	<li><a href="#">List</a></li>
 							      	<li><a href="#">Sync</a></li>
 							    </ul>
   						 </div>
-  					</div>  					
+  					</div>
   					<div class="row-fluid" id="div_cloud_display">
-  						<div class="span2">  							
-  							<ul class="nav nav-list">
-  								<li class="nav-header">Supported Cloud Storages</li>
+  						<div class="span2">
+  							<ul class="nav nav-pills nav-stacked">
+  								<li class="nav-header"><a>Cloud Storages</a></li>
   								<li class="divider"></li>
   								<li><a name="googledrive" href="#">Google Drive</a></li>
   								<li class="divider"></li>
@@ -63,31 +76,13 @@
   								<li class="divider"></li>
   							</ul>
   						</div>
-  						<!--
-  						<div class="span5">  							
-  							<ul class="nav nav-list">
-  								<li class="nav-header">Google Drive Contents</li>
-  								<li class="divider"></li>
-  								<div id="gdrive_folder_list">
-							    </div>							   
-  							</ul>
-	  					</div>
-	  					<div class="span5">  							
-  							<ul class="nav nav-list">
-  								<li class="nav-header">Dropbox Contents</li>
-  								<li class="divider"></li>
-  								<div id="dropbox_folder_list">
-							    </div>							   
-  							</ul>
-	  					</div>
-	  					-->
 	  				</div>
 	  				<div class="span12">
   						<div class="page-footer">
 							<h5 align="center">Usage not restricted</h5>
 						</div>
-					</div>	  				
-	  			</div>		
+					</div>
+	  			</div>
   			</div>
 		</div>
 	</body>

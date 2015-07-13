@@ -13,7 +13,7 @@ function list_dropbox_contents(folder, client, parent) {
 	  		console.log(entries);
 	  		var path = '';
 	  		for(var i=0; i<entries.length; i++) {
-	  			if(folder == "/") 
+	  			if(folder == "/")
 	  				path = folder + entries[i];
 	  			else
 	  				path = folder + "/" + entries[i];
@@ -29,11 +29,11 @@ function list_dropbox_contents(folder, client, parent) {
 	  						console.log("Folder : " + stat.path);
 	  						console.log(stat);
 	  						if('/Apps' == stat.path) return;
-	  						if('/Public' == stat.path) return;  						
-	  						g_dropbox_count++;  								
+	  						if('/Public' == stat.path) return;
+	  						g_dropbox_count++;
 							var target_id = get_collapse_unique_target_id(g_cloud_name, f_name, g_dropbox_count);
 							create_icon(f_name, target_id, parent);
-							create_radio_button(f_name, 'radio_btn', 'margin-left:0.1cm;', parent);			
+							create_radio_button(f_name, 'radio_btn', 'margin-left:0.1cm;', parent);
 							create_div(target_id, "collapse", "", 'margin-left:1cm;', parent);
 							var parent_id = document.getElementById(target_id);
 	  						list_dropbox_contents(stat.path, client, parent_id);
@@ -41,8 +41,8 @@ function list_dropbox_contents(folder, client, parent) {
 	  						console.log("File : " + stat.path);
 	  						create_radio_button(f_name, 'radio_btn', 'margin-left:0.5cm;', parent);
 	  					}
-	  				}  				
-	  			});  
+	  				}
+	  			});
 	  		}
   		} else {
   			create_text('Empty folder !!!', parent);
@@ -63,18 +63,18 @@ function load_dropbox(cloud_name, parent) {
 			if(error) {
 				console.error('Error: Failed to get access ' + error);
 				return;
-			} 
+			}
 			client.getAccountInfo(function(error, accountInfo) {
   				if (error) {
     				console.error('Error: Failed to get account info : ' + error);
     				return;
-  				} 
+  				}
   				var quota_heading = prepare_quota_heading(accountInfo.name, accountInfo.usedQuota, accountInfo.quota);
   				create_navigation_list(cloud_name, quota_heading, parent);
   				var folder_div = document.getElementById('folder_' + cloud_name);
-  				list_dropbox_contents("/", client, folder_div);					
+  				list_dropbox_contents("/", client, folder_div);
 			});
 		});
-		console.log(client);	 
-	 }	
+		console.log(client);
+	 }
 }
