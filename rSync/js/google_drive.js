@@ -47,7 +47,7 @@ function handle_google_drive_auth_result(resp) {
 function authorize_google_drive(immediate) {
 	var user_id = '';
 	gapi.auth.authorize({
-		  	client_id: '175339823669-kj2bv8dljiestf0nvp4dfm2f77855ldb.apps.googleusercontent.com',
+		  	client_id: '452679277122-t5tn997lkq97paovbm67ltgi4p9l9s4d.apps.googleusercontent.com',
 		  	scope: [
 					  	'https://www.googleapis.com/auth/drive.install',
 					  	'https://www.googleapis.com/auth/drive',
