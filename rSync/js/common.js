@@ -7,24 +7,13 @@ $(function() {
 	});
 });
 
-$('[data-toggle="collapse"]').click(function(e) {
-    $(e.target).find('.glyphicon-minus, .glyphicon-plus').toggleClass("glyphicon-minus glyphicon-plus");
-});
+//$('[data-toggle="collapse"]').click(function(e) {
+//    $(e.target).find('.glyphicon-minus, .glyphicon-plus').toggleClass("glyphicon-minus glyphicon-plus");
+//});
 
 var g_cloud_count = 0;
 
 function list_contents(cloud_name) {
-	/*
-	var popup = window.open("about:blank", "dummy_window", "height=50, width=50", true);
-	setTimeout(function() {
-    	if(!popup || popup.outerHeight === 0) {
-    		alert("Popup Blocker is enabled! Please unblock Popup for this site");
-    		return;
-        } else {
-        	popup.close()
-        }
-    }, 5);
-	*/
     if(g_cloud_count < 2) {
 	    var parent = document.getElementById('div_cloud_display');
 		switch(cloud_name) {
@@ -35,10 +24,10 @@ function list_contents(cloud_name) {
 						load_dropbox(cloud_name, parent);
 						break;
 			case "copy":
-						alert("Still not implemented");
+						load_test_drive(cloud_name, parent);
 						break;
 			case "icloud":
-						alert("Still not implemented");
+						load_test_drive(cloud_name, parent);
 						break;
 			default:
 						alert("Not supported !!!");
@@ -64,7 +53,7 @@ function create_navigation_list(cloud_name, username, parent) {
 	create_unordered_list('ul_' + cloud_name, 'nav nav-pills nav-stacked', nav_parent);
 	var ul_parent = document.getElementById('ul_' + cloud_name);
 	var header = cloud_name;
-	if(username) header = header + " ("+ username + ")";
+	if(username) header = header + " - "+ username + "";
 	create_list('', 'nav-header', header, ul_parent);
 	create_list('', 'divider', '', ul_parent);
 	create_div('folder_' + cloud_name, '', '', '', ul_parent);

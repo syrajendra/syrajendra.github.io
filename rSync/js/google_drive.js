@@ -22,11 +22,15 @@ var g_parent = '';
 //}
 
 function handle_quota_result(resp) {
-	var quota_heading = prepare_quota_heading(resp.name, resp.quotaBytesUsed, resp.quotaBytesTotal);
-	create_navigation_list(g_cloud_name, quota_heading, g_parent);
- 	var folder_div = document.getElementById('folder_' + g_cloud_name);
- 	//console.log(folder_div);
- 	list_google_drive_contents('root', folder_div);
+	if (resp && !resp.error) {
+ 		var quota_heading = prepare_quota_heading(resp.name, resp.quotaBytesUsed, resp.quotaBytesTotal);
+		create_navigation_list(g_cloud_name, quota_heading, g_parent);
+ 		var folder_div = document.getElementById('folder_' + g_cloud_name);
+ 		//console.log(folder_div);
+ 		list_google_drive_contents('root', folder_div);
+ 	} else {
+ 		create_navigation_list(g_cloud_name, '\nError: Authorization failed.\nRe-try after unblocking pop-up', g_parent);
+ 	}
 }
 
 function handle_google_drive_auth_result(resp) {
@@ -86,7 +90,7 @@ function handle_google_drive_file_list(list, parent) {
 			}
 		}
 	} else {
-		create_text('Empty folder !!!', parent);
+		create_text('GoogleDrive - Empty folder !!!', parent);
 	}
 }
 

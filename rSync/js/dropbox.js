@@ -45,7 +45,7 @@ function list_dropbox_contents(folder, client, parent) {
 	  			});
 	  		}
   		} else {
-  			create_text('Empty folder !!!', parent);
+  			create_text('Dropbox - Empty folder !!!', parent);
   		}
 	});
 }
